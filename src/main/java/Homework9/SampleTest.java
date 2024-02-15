@@ -39,7 +39,7 @@ public class SampleTest {
         WebElement userName = driver.findElement(By.id("user-name"));
         userName.sendKeys("standard_user");
         Assert.assertNotNull(userName);}
-@Test
+       @Test
     public void verifyUserPass()throws InterruptedException{
 
         WebElement password = driver.findElement(By.id("password"));
