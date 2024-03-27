@@ -1,5 +1,7 @@
 package Homework10.Test;
+
 import java.util.List;
+
 import org.junit.Assert.*;
 import org.junit.*;
 import org.junit.runner.JUnitCore;
@@ -16,17 +18,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import Homework10.Helpers.BrowserFactory;
 import Homework10.PageObjectModels.FirstPage;
+
 public class FirstTest {
     WebDriver driver;
 
     @Test
-    public void verifyAll() throws InterruptedException{
-        WebDriver driver=BrowserFactory.getBrowser("Chrome");
+    public void verifyAll() throws InterruptedException {
+        WebDriver driver = BrowserFactory.getBrowser("Chrome");
         FirstPage page = new FirstPage(driver);
 
         String ExpectedLogo = "Swag Labs";
         page.displayLogo();
-        Assert.assertEquals("Swag Labs","Swag Labs");
+        Assert.assertEquals("Swag Labs", "Swag Labs");
 
 
         page.enterUserName("standard_user");

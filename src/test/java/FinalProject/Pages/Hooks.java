@@ -34,7 +34,7 @@ public class Hooks {
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://www.saucedemo.com/");
-
+        //https://www.saucedemo.com
         return driver;
     }
     @After

@@ -1,5 +1,6 @@
 package FinalProject.Pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,15 +22,18 @@ public class LoginPage {
 
     public void enterUserName(String user) {
         driver.findElement(userName).sendKeys(user);
+        Assert.assertTrue(driver.findElement(userName).isDisplayed());
     }
 
     public void enterPass(String pass) {
         driver.findElement(password).sendKeys(pass);
+        Assert.assertNotNull(password);
     }
 
     public void clickLogButton() {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOfElementLocated(loggButton));
+        Assert.assertTrue(driver.findElement(loggButton).isEnabled());
         driver.findElement(loggButton).click();
     }
 }

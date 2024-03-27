@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage {
-    WebDriver driver;
+    public WebDriver driver;
     WebDriverWait wait;
 
     public ProductPage(WebDriver driver) {
@@ -50,11 +50,14 @@ public class ProductPage {
     }
 
     public void enterLastName(String Last) {
+        Assert.assertTrue(driver.findElement(lastName).isDisplayed());
         driver.findElement(lastName).sendKeys(Last);
     }
 
     public void enterPostalCode(String Code) {
+        Assert.assertTrue(driver.findElement(postCode).isDisplayed());
         driver.findElement(postCode).sendKeys(Code);
+
     }
 
     public void clickContinueButton() {
@@ -68,12 +71,12 @@ public class ProductPage {
         driver.findElement(finishButton).click();
     }
 
-    public void seeConfirmMessage() {
+    public String seeConfirmMessage(String confirm) {
         driver.findElement(confirmation).isDisplayed();
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.textToBe(confirmation, "Thank you for your order!"));
-
-        Assert.assertTrue(true);
+        Assert.assertNotNull(confirmation);
+        return confirm;
     }
 
 }
