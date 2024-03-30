@@ -3,6 +3,7 @@ package FinalProject.Pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -71,15 +72,19 @@ public class ProductPage {
         driver.findElement(finishButton).click();
     }
 
-    public String seeConfirmMessage(String confirm) {
-        driver.findElement(confirmation).isDisplayed();
+    public String seeConfirmMessage() {
+        WebElement confirmationElement = driver.findElement(confirmation);
+        Assert.assertNotNull("Confirmation element is null", confirmationElement);
+        boolean isDisplayed = confirmationElement.isDisplayed();
+        Assert.assertTrue("Confirmation message is not displayed", isDisplayed);
         WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.textToBe(confirmation, "Thank you for your order!"));
-        Assert.assertNotNull(confirmation);
-        return confirm;
+        return confirmationElement.getText();
     }
-
 }
+
+
+
+
 
 
 

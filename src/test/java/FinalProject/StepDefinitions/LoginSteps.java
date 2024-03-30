@@ -68,10 +68,9 @@ public class LoginSteps {
     @And("I could see a confirmation message")
     public void i_could_see_a_confirmation_message() throws InterruptedException {
         ProductPage productPage = new ProductPage(driver);
-        productPage.seeConfirmMessage("Thank you for your order!");
+        String actualMessage=productPage.seeConfirmMessage();
         String expectedMessage = "Thank you for your order!";
-        Assert.assertEquals("Thank you for your order!", productPage.seeConfirmMessage("Thank you for your order!"));
-
+        Assert.assertEquals(expectedMessage,actualMessage);
         Hooks.tearDown();
     }
 
