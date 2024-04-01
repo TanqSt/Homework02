@@ -42,7 +42,8 @@ public class ProductPage {
 
 
     public void clickCheckout() {
-        Assert.assertTrue(driver.findElement(checkoutButton).isDisplayed());
+        WebElement checkoutBttn = driver.findElement(checkoutButton);
+        Assert.assertTrue("Checkout button is not displayed", checkoutBttn.isDisplayed());
         driver.findElement(checkoutButton).click();
     }
 
@@ -51,12 +52,14 @@ public class ProductPage {
     }
 
     public void enterLastName(String Last) {
-        Assert.assertTrue(driver.findElement(lastName).isDisplayed());
+        WebElement lastName1 = driver.findElement(lastName);
+        Assert.assertTrue("Last name is not displayed", lastName1.isDisplayed());
         driver.findElement(lastName).sendKeys(Last);
     }
 
     public void enterPostalCode(String Code) {
-        Assert.assertTrue(driver.findElement(postCode).isDisplayed());
+        WebElement postalCode = driver.findElement(postCode);
+        Assert.assertTrue("Postal code is not displayed", postalCode.isDisplayed());
         driver.findElement(postCode).sendKeys(Code);
 
     }
