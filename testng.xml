@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/Boris/IdeaProjects/JQALearn/src/main/java/Homework11/Test1/FullTest.java"><classes><class name="Homework11.Test1.FullTest"><methods><include name="verifyAll"/></methods></class></classes></test></suite>
