@@ -4,12 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-public class AccountCreate {
+import Module4Final.Resource.ReadConfig;
+
+
+
+public class AccountCreate extends ReadConfig{
 
     public static WebDriver driver;
 
 
-   static By verMessTitle = By.xpath("//*[@id=\"rightPanel\"]/h1");
+   //static By verMessTitle = By.xpath("//*[@id=\"rightPanel\"]/h1");
     static By firstNameLocator = By.xpath("//*[@id=\"customer.firstName\"]");
    static By lastNameLocator = By.xpath("//*[@id=\"customer.lastName\"]");
    static By addressLocator = By.id("customer.address.street");
@@ -28,11 +32,9 @@ public class AccountCreate {
     }
 
 
-    // METODS
-
-
-
-    public static void addFirstName(String firstName) {driver.findElement(firstNameLocator).sendKeys(firstName);
+    // METOD
+    public static void addFirstName(String firstName1) {
+        driver.findElement(firstNameLocator).sendKeys(firstName1);
     }
 
     public static void addLastName(String lastName) {
